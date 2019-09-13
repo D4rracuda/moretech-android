@@ -20,7 +20,6 @@ abstract class BaseFragment : Fragment() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         ShareBillApplication.getAppComponent().inject(this)
-
     }
 
     override fun onCreateView(
