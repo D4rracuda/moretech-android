@@ -1,7 +1,31 @@
 package com.lydone.sharebillandroid.repository
 
+import com.lydone.sharebillandroid.repository.network.models.responses.InvoiceInfoResponse
+import com.lydone.sharebillandroid.repository.network.models.responses.ResultResponse
+import com.lydone.sharebillandroid.repository.network.models.responses.TransactionIdResponse
 import io.reactivex.Single
 
 interface Repository {
-    fun getHelloString(): Single<String>
+    fun getSessionId(
+        addresses: List<String> = emptyList(),
+        deviceId: String = "test_device_id",
+        deviceType: Int = 1
+    ): Single<ResultResponse<String>>
+
+    fun getInvoiceId(
+        fpsid: String,
+        amount: Int,
+        number: String,
+        payer: String,
+        recipient: String,
+        currencyCode: Int = 810,
+        description: String = "test"
+    ): Single<ResultResponse<TransactionIdResponse>>
+
+    fun getInvoiceInfo(
+        fpsid: String,
+        number: String,
+        recipient: String,
+        currencyCode: Int = 810
+    ): Single<ResultResponse<InvoiceInfoResponse>>
 }

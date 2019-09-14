@@ -2,7 +2,11 @@ package com.lydone.sharebillandroid.di
 
 import com.google.gson.Gson
 import com.lydone.sharebillandroid.architecture.viewmodels.ViewModelFactory
-import com.lydone.sharebillandroid.repository.*
+import com.lydone.sharebillandroid.repository.CacheStorage
+import com.lydone.sharebillandroid.repository.CacheStorageImpl
+import com.lydone.sharebillandroid.repository.Repository
+import com.lydone.sharebillandroid.repository.RepositoryImpl
+import com.lydone.sharebillandroid.repository.network.ApiService
 import dagger.Module
 import dagger.Provides
 import retrofit2.Retrofit
@@ -23,7 +27,7 @@ class AppModule {
     @Singleton
     fun provideRetrofit(gson: Gson): Retrofit {
         return Retrofit.Builder()
-            .baseUrl("http://google.com/")
+            .baseUrl("http://89.208.84.235:31080")
             .addConverterFactory(GsonConverterFactory.create(gson))
             .addCallAdapterFactory(RxJava2CallAdapterFactory.create())
             .build()
