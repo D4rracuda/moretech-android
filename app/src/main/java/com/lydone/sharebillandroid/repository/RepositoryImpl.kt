@@ -1,5 +1,6 @@
 package com.lydone.sharebillandroid.repository
 
+import com.lydone.sharebillandroid.repository.network.ApiService
 import io.reactivex.Single
 
 class RepositoryImpl(private val cacheStorage: CacheStorage, private val apiService: ApiService) : Repository {
