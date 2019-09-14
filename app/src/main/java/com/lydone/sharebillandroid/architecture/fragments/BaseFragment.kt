@@ -11,6 +11,7 @@ import io.reactivex.disposables.CompositeDisposable
 import io.reactivex.disposables.Disposable
 import javax.inject.Inject
 
+
 abstract class BaseFragment : Fragment() {
     abstract val layout: Int
     @Inject
@@ -26,8 +27,7 @@ abstract class BaseFragment : Fragment() {
         inflater: LayoutInflater,
         container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View? {
-        return inflater.inflate(layout, container, false)
+    ): View? {        return inflater.inflate(layout, container, false)
     }
 
     override fun onDestroyView() {

@@ -5,13 +5,13 @@
     <fragment
         android:id="@+id/awardsFragment"
         android:name="com.lydone.sharebillandroid.awards.AwardsFragment"
-        android:label="AwardsFragment" />
+        android:label="Награды" />
     <fragment
         android:id="@+id/historyFragment"
         android:name="com.lydone.sharebillandroid.history.HistoryFragment"
-        android:label="HistoryFragment" />
+        android:label="История" />
     <fragment
         android:id="@+id/mainFragment"
         android:name="com.lydone.sharebillandroid.main.MainFragment"
-        android:label="MainFragment" />
+        android:label="Главная" />
 </navigation>
