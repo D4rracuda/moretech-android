@@ -20,15 +20,16 @@ class RepositoryImpl(private val cacheStorage: CacheStorage, private val apiServ
 
     override fun getInvoiceId(
         fpsid: String,
-        amount: Double,
+        amount: Int,
         number: String,
         payer: String,
+        recipient: String,
         currencyCode: Int,
         description: String
     ): Single<ResultResponse<TransactionIdResponse>> {
         return apiService.getInvoiceId(
             fpsid,
-            CreateInvoiceRequest(amount, number, payer, currencyCode, description)
+            CreateInvoiceRequest(amount, number, payer, recipient, currencyCode, description)
         )
     }
 

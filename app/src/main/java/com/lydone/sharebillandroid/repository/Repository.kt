@@ -14,11 +14,12 @@ interface Repository {
 
     fun getInvoiceId(
         fpsid: String,
-        amount: Double,
+        amount: Int,
         number: String,
         payer: String,
+        recipient: String,
         currencyCode: Int = 810,
-        description: String = ""
+        description: String = "test"
     ): Single<ResultResponse<TransactionIdResponse>>
 
     fun getInvoiceInfo(
