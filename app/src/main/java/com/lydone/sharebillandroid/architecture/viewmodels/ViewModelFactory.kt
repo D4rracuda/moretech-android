@@ -3,6 +3,9 @@ package com.lydone.sharebillandroid.architecture.viewmodels
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider
 import com.lydone.sharebillandroid.application.test.TestViewModel
+import com.lydone.sharebillandroid.awards.AwardsViewModel
+import com.lydone.sharebillandroid.history.HistoryViewModel
+import com.lydone.sharebillandroid.main.MainViewModel
 import com.lydone.sharebillandroid.repository.Repository
 import javax.inject.Inject
 
@@ -11,9 +14,16 @@ class ViewModelFactory @Inject constructor(private val repository: Repository) :
     override fun <T : ViewModel?> create(modelClass: Class<T>): T {
         return when {
             modelClass.isAssignableFrom(TestViewModel::class.java) -> {
-                return TestViewModel(
-                    repository
-                ) as T
+                TestViewModel(repository) as T
+            }
+            modelClass.isAssignableFrom(MainViewModel::class.java) -> {
+                MainViewModel(repository) as T
+            }
+            modelClass.isAssignableFrom(AwardsViewModel::class.java) -> {
+                AwardsViewModel(repository) as T
+            }
+            modelClass.isAssignableFrom(HistoryViewModel::class.java) -> {
+                HistoryViewModel(repository) as T
             }
             else -> throw IllegalStateException("Provide create method fo viewModel's factory")
         }

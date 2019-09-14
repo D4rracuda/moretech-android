@@ -2,17 +2,17 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
 
     <item
-        android:id="@+id/navigation_songs"
+        android:id="@+id/historyFragment"
         android:icon="@drawable/history"
         android:title="История" />
 
     <item
-        android:id="@+id/navigation_albums"
+        android:id="@+id/mainFragment"
         android:icon="@drawable/checked_menu"
         android:title="Главная" />
 
     <item
-        android:id="@+id/navigation_artists"
+        android:id="@+id/awardsFragment"
         android:icon="@drawable/person"
         android:title="Награды" />
 
