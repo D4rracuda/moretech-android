@@ -4,7 +4,7 @@ import android.os.Bundle
 import android.view.View
 import android.widget.Toast
 import androidx.appcompat.app.AlertDialog
-import androidx.appcompat.app.AppCompatActivity
+import androidx.navigation.ui.NavigationUI
 import com.lydone.sharebillandroid.architecture.fragments.FragmentWithViewModelAndNavController
 import kotlinx.android.synthetic.main.fragment_main.*
 
@@ -14,37 +14,38 @@ class MainFragment : FragmentWithViewModelAndNavController<MainViewModel>() {
     override val layout: Int = com.lydone.sharebillandroid.R.layout.fragment_main
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        fab.setOnClickListener{
+        NavigationUI.setupWithNavController(toolbar_main, navController)
+        fab.setOnClickListener {
             showDialog()
         }
     }
 
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-        (activity as AppCompatActivity).supportActionBar!!.title = "Главная"
-    }
-    private fun showDialog(){
-        lateinit var dialog:AlertDialog
-        val array = arrayOf("Русалочка","Барракуда","Мыльница","Ремесло")
+    private fun showDialog() {
+        lateinit var dialog: AlertDialog
+        val array = arrayOf("Русалочка", "Барракуда", "Мыльница", "Ремесло")
         val builder = context?.let { AlertDialog.Builder(it) }
         builder?.setTitle("Создать группу")
 
         builder?.setPositiveButton(android.R.string.no) { dialog, which ->
-            Toast.makeText(getContext(),
-                "окей", Toast.LENGTH_SHORT).show()
+            Toast.makeText(
+                getContext(),
+                "окей", Toast.LENGTH_SHORT
+            ).show()
         }
 
         builder?.setNegativeButton(android.R.string.no) { dialog, which ->
-            Toast.makeText(getContext(),
-                "назад", Toast.LENGTH_SHORT).show()
+            Toast.makeText(
+                getContext(),
+                "назад", Toast.LENGTH_SHORT
+            ).show()
         }
 
-        builder?.setSingleChoiceItems(array,-1) { _, which->
+        builder?.setSingleChoiceItems(array, -1) { _, which ->
             val groupName = array[which]
             try {
-                Toast.makeText(context,"$groupName color selected.",Toast.LENGTH_LONG).show()
-            }catch (e:IllegalArgumentException){
-                Toast.makeText(context,"$groupName cannot be selected.",Toast.LENGTH_LONG).show()
+                Toast.makeText(context, "$groupName color selected.", Toast.LENGTH_LONG).show()
+            } catch (e: IllegalArgumentException) {
+                Toast.makeText(context, "$groupName cannot be selected.", Toast.LENGTH_LONG).show()
             }
         }
 
