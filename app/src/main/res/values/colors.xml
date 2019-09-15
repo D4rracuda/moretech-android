@@ -5,4 +5,7 @@
     <color name="colorAccent">#D81B60</color>
 
     <color name="colorToolbar">#FFFFFF</color>
+    <color name="green">#8BCD7A</color>
+    <color name="uncheckedGrey">#E5E5E5</color>
+    <color name="darkGrey">#B5B5B5</color>
 </resources>

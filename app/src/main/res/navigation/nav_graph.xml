@@ -1,17 +1,36 @@
 <?xml version="1.0" encoding="utf-8"?>
 <navigation xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto" android:id="@+id/nav_graph"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
     app:startDestination="@id/mainFragment">
     <fragment
         android:id="@+id/awardsFragment"
         android:name="com.lydone.sharebillandroid.awards.AwardsFragment"
-        android:label="Награды" />
+        android:label="Награды" >
+        <action
+            android:id="@+id/action_awardsFragment_to_qrFragment"
+            app:destination="@id/qrFragment" />
+    </fragment>
     <fragment
         android:id="@+id/historyFragment"
         android:name="com.lydone.sharebillandroid.history.HistoryFragment"
-        android:label="История" />
+        android:label="История" >
+        <action
+            android:id="@+id/action_historyFragment_to_qrFragment"
+            app:destination="@id/qrFragment" />
+    </fragment>
     <fragment
         android:id="@+id/mainFragment"
         android:name="com.lydone.sharebillandroid.main.MainFragment"
-        android:label="Главная" />
+        android:label="Главная" >
+        <action
+            android:id="@+id/action_mainFragment_to_qrFragment"
+            app:destination="@id/qrFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/qrFragment"
+        android:name="com.lydone.sharebillandroid.qr.QrCodeFragment"
+        android:label="Оплата"
+        tools:layout="@layout/fragment_qr" />
 </navigation>

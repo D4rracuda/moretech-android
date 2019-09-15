@@ -5,6 +5,7 @@ import androidx.lifecycle.ViewModelProvider
 import com.lydone.sharebillandroid.awards.AwardsViewModel
 import com.lydone.sharebillandroid.history.HistoryViewModel
 import com.lydone.sharebillandroid.main.MainViewModel
+import com.lydone.sharebillandroid.qr.QrCodeViewModel
 import com.lydone.sharebillandroid.repository.Repository
 import javax.inject.Inject
 
@@ -20,6 +21,9 @@ class ViewModelFactory @Inject constructor(private val repository: Repository) :
             }
             modelClass.isAssignableFrom(HistoryViewModel::class.java) -> {
                 HistoryViewModel(repository) as T
+            }
+            modelClass.isAssignableFrom(QrCodeViewModel::class.java) -> {
+                QrCodeViewModel(repository) as T
             }
             else -> throw IllegalStateException("Provide create method fo viewModel's factory")
         }
