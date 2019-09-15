@@ -5,13 +5,13 @@ import android.view.View
 import android.widget.Toast
 import androidx.appcompat.app.AlertDialog
 import androidx.navigation.ui.NavigationUI
-import com.lydone.sharebillandroid.R
 import com.lydone.sharebillandroid.architecture.fragments.FragmentWithViewModelAndNavController
 import kotlinx.android.synthetic.main.fragment_history.*
 
+
 class HistoryFragment : FragmentWithViewModelAndNavController<HistoryViewModel>() {
     override val viewModelClass: Class<HistoryViewModel> = HistoryViewModel::class.java
-    override val layout: Int = R.layout.fragment_history
+    override val layout: Int = com.lydone.sharebillandroid.R.layout.fragment_history
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
@@ -28,7 +28,7 @@ class HistoryFragment : FragmentWithViewModelAndNavController<HistoryViewModel>(
         builder?.setTitle("Создать группу")
 
         builder?.setPositiveButton("окей") { dialog, which ->
-            navController.navigate(R.id.action_historyFragment_to_qrFragment)
+            navController.navigate(com.lydone.sharebillandroid.R.id.action_historyFragment_to_qrFragment)
         }
 
         builder?.setNegativeButton("назад") { dialog, which ->

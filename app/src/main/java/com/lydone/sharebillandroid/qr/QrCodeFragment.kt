@@ -19,7 +19,7 @@ class QrCodeFragment : FragmentWithViewModelAndNavController<QrCodeViewModel>() 
 
         qrScanIntegrator = IntentIntegrator(activity)
         qrScanIntegrator?.setOrientationLocked(true)
-        qrScanIntegrator?.setPrompt("сканируйте qr код")
+        qrScanIntegrator?.setPrompt("Сканируйте QR код")
         qrScanIntegrator?.setCameraId(0)  // Use a specific camera of the device
         qrScanIntegrator?.setBeepEnabled(false)
         qrScanIntegrator?.setBarcodeImageEnabled(true)

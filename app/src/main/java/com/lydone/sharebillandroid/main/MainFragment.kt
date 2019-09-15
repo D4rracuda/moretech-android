@@ -16,7 +16,7 @@ class MainFragment : FragmentWithViewModelAndNavController<MainViewModel>() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         NavigationUI.setupWithNavController(toolbar_main, navController)
-        fab.setOnClickListener {
+        fab3.setOnClickListener {
             showDialog()
         }
     }
