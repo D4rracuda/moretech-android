@@ -3,7 +3,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/nav_graph"
-    app:startDestination="@id/mainFragment">
+    app:startDestination="@id/shareBillFragment">
     <fragment
         android:id="@+id/awardsFragment"
         android:name="com.lydone.sharebillandroid.awards.AwardsFragment"
@@ -33,4 +33,8 @@
         android:name="com.lydone.sharebillandroid.qr.QrCodeFragment"
         android:label="Оплата"
         tools:layout="@layout/fragment_qr" />
+    <fragment
+        android:id="@+id/shareBillFragment"
+        android:name="com.lydone.sharebillandroid.share_bill.ShareBillFragment"
+        android:label="ShareBillFragment" />
 </navigation>

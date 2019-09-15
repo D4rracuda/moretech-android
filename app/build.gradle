@@ -52,4 +52,6 @@ dependencies {
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.2.0'
     implementation 'de.hdodenhof:circleimageview:3.0.1'
     implementation 'com.journeyapps:zxing-android-embedded:3.6.0'
+    // https://mvnrepository.com/artifact/com.rabbitmq/amqp-client
+    implementation group: 'com.rabbitmq', name: 'amqp-client', version: '4.11.3'
 }
