@@ -32,10 +32,6 @@ class AwardsFragment : FragmentWithViewModelAndNavController<AwardsViewModel>() 
         }
 
         builder?.setNegativeButton("назад") { dialog, which ->
-            Toast.makeText(
-                getContext(),
-                "назад", Toast.LENGTH_SHORT
-            ).show()
         }
 
         builder?.setSingleChoiceItems(array, -1) { _, which ->
