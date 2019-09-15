@@ -5,6 +5,7 @@ import android.view.View
 import android.widget.Toast
 import androidx.appcompat.app.AlertDialog
 import androidx.navigation.ui.NavigationUI
+import com.lydone.sharebillandroid.R
 import com.lydone.sharebillandroid.architecture.fragments.FragmentWithViewModelAndNavController
 import kotlinx.android.synthetic.main.fragment_main.*
 
@@ -15,7 +16,7 @@ class MainFragment : FragmentWithViewModelAndNavController<MainViewModel>() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         NavigationUI.setupWithNavController(toolbar_main, navController)
-        fab.setOnClickListener {
+        fab3.setOnClickListener {
             showDialog()
         }
     }
@@ -26,14 +27,11 @@ class MainFragment : FragmentWithViewModelAndNavController<MainViewModel>() {
         val builder = context?.let { AlertDialog.Builder(it) }
         builder?.setTitle("Создать группу")
 
-        builder?.setPositiveButton(android.R.string.no) { dialog, which ->
-            Toast.makeText(
-                getContext(),
-                "окей", Toast.LENGTH_SHORT
-            ).show()
+        builder?.setPositiveButton("окей") { dialog, which ->
+            navController.navigate(R.id.action_mainFragment_to_qrFragment)
         }
 
-        builder?.setNegativeButton(android.R.string.no) { dialog, which ->
+        builder?.setNegativeButton("назад") { dialog, which ->
             Toast.makeText(
                 getContext(),
                 "назад", Toast.LENGTH_SHORT
@@ -43,7 +41,7 @@ class MainFragment : FragmentWithViewModelAndNavController<MainViewModel>() {
         builder?.setSingleChoiceItems(array, -1) { _, which ->
             val groupName = array[which]
             try {
-                Toast.makeText(context, "$groupName color selected.", Toast.LENGTH_LONG).show()
+                //nothing
             } catch (e: IllegalArgumentException) {
                 Toast.makeText(context, "$groupName cannot be selected.", Toast.LENGTH_LONG).show()
             }
