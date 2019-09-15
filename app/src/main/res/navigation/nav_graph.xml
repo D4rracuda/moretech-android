@@ -33,4 +33,8 @@
         android:name="com.lydone.sharebillandroid.qr.QrCodeFragment"
         android:label="Оплата"
         tools:layout="@layout/fragment_qr" />
+    <fragment
+        android:id="@+id/shareBillFragment"
+        android:name="com.lydone.sharebillandroid.share_bill.ShareBillFragment"
+        android:label="ShareBillFragment" />
 </navigation>
